@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Document</title>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+/>
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Arvo|Lexend+Tera&amp;display=swap"
+/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+<style lang="">
+    *,
+    head,
+    body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-family: "Arvo", serif;
+    outline: unset;
+    }
+    .pro_detail {
+    min-height: 700px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    }
+
+    .main {
+    flex: 5;
+    /* background: linear-gradient(rgb(245, 222, 211),rgb(240, 209, 180));  */
+    display: flex;
+    height: 60vh;
+    width: 100vw;
+    }
+
+    .main_title {
+    width: 20vw;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    color: #c55829ab;
+    }
+    .upright {
+    writing-mode: vertical-lr;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 12px;
+    }
+
+    .haper {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 20px;
+    font-family: "Lexend Tera", sans-serif;
+    }
+    .haper::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f30a";
+    padding: 10px;
+    transition: width 0.6s ease-out;
+    cursor: pointer;
+    }
+    .haper::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f30b";
+    padding: 10px;
+    }
+    .haper:hover::before {
+    color: white;
+    }
+    /* flex:1 + padd margin  影向比例*/
+
+    .main_p {
+    flex: 1;
+    width: 50%;
+    position: relative;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    }
+
+    .main_x {
+    width: 50%;
+    padding: 140px 50px;
+    color: #b19da1;
+    position: relative;
+    }
+
+    .main_x h5 {
+    padding: 20px 0;
+    }
+
+    .main_x p {
+    line-height: 1.5rem;
+    font-size: 1rem;
+    position: relative;
+    }
+    .main_x::before {
+    content: "01";
+    position: absolute;
+    font-size: 6rem;
+    color: #e4bdbc70;
+    right: 55px;
+    }
+
+    .main_x button {
+    bottom: 100px;
+    position: absolute;
+    right: 100px;
+    padding: 10px;
+    border: 2px solid #e6c2c8;
+    border-radius: 10px;
+    color: #b19da1;
+    }
+
+    .main_p::before {
+    content: "";
+    background-color: rgba(191, 169, 117, 0.29);
+    height: 260px;
+    width: 80%;
+    position: absolute;
+    /* margin-top: 50px; */
+    border-radius: 35px 0 0 0;
+    }
+
+    .main_p::after {
+    content: "EXPLORER OF SUSUXXXXXXXXXXXXX";
+    /* background-color: rgba(191, 169, 117, 0.29); */
+    /* height: 260px; */
+    width: 70%;
+    position: absolute;
+    color: #d8a4a4;
+    top: 60px;
+    left: 260px;
+    /* margin-top: 50px; */
+    /* border-radius: 35px 0 0 0; */
+    }
+
+    .main_p img {
+    width: 70%;
+    height: 80%;
+    /* max-height: 350px; */
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+    top: 50px;
+    transition: all 0.3s linear;
+    opacity: 1;
+    }
+    .main_p img.active {
+    opacity: 0;
+    }
+
+    /* .protail_img img{
+            transition: all 3s;
+            opacity: 1;
+        }
+        .protail_img img.active{
+            opacity: 1;
+        } */
+    .main_p img.cc {
+    opacity: 0;
+    }
+
+    .main_article {
+    width: 600px;
+    background-color: #f7f7f7;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #c55829ab;
+    }
+
+    @media screen and (max-width: 767px) {
+    .pro_detail {
+        height: unset;
+        flex-direction: column;
+    }
+    .main {
+        height: 100vh;
+        flex-direction: column;
+    }
+    .main_p {
+        width: 100%;
+        position: relative;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        padding: 10px;
+        height: 60%;
+    }
+    .main_p::after {
+        left: 50px;
+    }
+    .main_x {
+        width: 100%;
+        /* padding: 50px; */
+        height: 40%;
+        padding: 10px 50px 10px;
+    }
+    .main_x p {
+        font-size: 0.7rem;
+    }
+    .main_x button {
+        bottom: unset;
+        right: unset;
+        font-size: 0.75rem;
+        /* position: relative; */
+    }
+    }
+    .main_article p {
+    font-size: 4rem;
+    text-align: center;
+    padding: 20px;
+    }
+
+    .main2 {
+    flex: 2;
+    /* width:100%;
+            height:30vh; */
+    background-color: rgba(220, 206, 199, 0.65);
+    position: relative;
+    }
+
+    .main2::before {
+    content: "";
+    background-color: white;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    }
+
+    .div2 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    }
+
+    figure {
+    width: 185px;
+    height: 150px;
+    margin: 0 10px;
+    object-fit: contain;
+    }
+
+    figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*   object-position: 10% 70%; */
+    object-position: center right;
+    }
+
+        .swiper-container {
+            width: 100%;
+            height: 300px;
+        }
+
+        .swiper-slide img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+    @media screen and (max-width: 767px) {
+    .main2 {
+        height: 100vh;
+        flex: unset;
+    }
+    .div2 {
+        /* height: unset; */
+        flex-direction: column;
+    }
+
+    .main2::before {
+        height: 100%;
+        width: 50%;
+        /* position: absolute; */
+    }
+
+    figure {
+        margin: 50px 10px;
+    }
+    }
+</style>
+</head>
+<body>
+<div class="pro_detail">
+    <div class="main">
+    <!-- <div class="main_p">
+        <!-- <img src="https://images.unsplash.com/photo-1525268771113-32d9e9021a97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                alt=""> -->
+        <!-- <img
+        src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80"
+        alt=""
+        /> -->
+        <!-- <img src="./000000000122_3.jpg" alt="">
+    </div> --> 
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1509227035009-4bef0b738dd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="swpier1"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1543791988-e2f7a58aec25?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="swpier2"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1545398865-0062dafeb74d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="swpier3"/>
+            </div>  
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    <div class="main_x">
+        <h5>light your life</h5>
+        <p>
+        Let life be beautiful like summer flowers and death like autumn
+        leaves.
+        </p>
+
+        <button class="btn" id="flow_btn">
+        followMe
+        </button>
+    </div>
+    </div>
+
+    <div class="main2">
+    <div class="div2">
+        <figure class="protail_img">
+        <!-- <img
+                    src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                    alt=""> -->
+
+        <img
+            src="https://images.unsplash.com/photo-1545398865-0062dafeb74d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+            alt=""
+        />
+
+        <!-- <img src="./000000000122_1.jpg" alt=""> -->
+        </figure>
+
+        <figure class="protail_img">
+        <!-- <img
+                    src="https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                    alt=""> -->
+        <img
+            src="https://images.unsplash.com/photo-1543791988-e2f7a58aec25?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            alt=""
+        />
+                <!-- <img src="./000000000122_2.jpg" alt=""> -->
+        </figure>
+
+        <figure class="protail_img">
+        <!-- <img
+                    src="https://images.unsplash.com/photo-1525197635744-498f5dba62bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                    alt=""> -->
+        <img
+            src="https://images.unsplash.com/photo-1509227035009-4bef0b738dd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            alt=""
+        />
+         <!-- <img src="./000000000122_3.jpg" alt=""> -->
+        </figure>
+    </div>
+    </div>
+
+
+   
+</div>
+</div>
+<!-- Additional required wrapper -->
+
+<script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<script>
+    $(".protail_img").click(function() {    
+        var index = $(".protail_img").index(this);
+        var place_img = $(this).find("img").attr("src");
+        
+        $(".main_p img")
+                .addClass("active").delay(1000)
+                .queue(function() {
+                    $(".main_p img")
+                        .attr("src", place_img)
+                        .removeClass("active")
+                        .dequeue();
+                    });
+                return false;
+    });
+
+var swiper = new Swiper('.swiper-container', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    loop: true,
+  });
+
+
+</script>
+</body>
+</html>
